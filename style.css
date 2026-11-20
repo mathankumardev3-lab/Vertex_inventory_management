@@ -1,0 +1,133 @@
+/* ======================================================================
+       css/style.css - Enterprise SaaS Design Tokens & Crisp Table Styles
+    ====================================================================== */
+    :root {
+      --sf-navy: #1E293B;
+      --sf-bg: #F8FAFC;
+      --sf-white: #FFFFFF;
+      --sf-teal: #14B8A6;
+      --sf-text: #334155;
+      --sf-border: #E2E8F0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--sf-bg);
+      color: var(--sf-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Crisp 1px SaaS Card */
+    .sf-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+      min-width: 0;
+    }
+
+    /* Form Controls */
+    .sf-input {
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      background-color: #FFFFFF;
+      color: #1E293B;
+      line-height: 1.4;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .sf-input:focus {
+      outline: none;
+      border-color: #14B8A6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+    }
+
+    /* Sidebar Collapse Transition */
+    #sidebar {
+      transition: width 0.2s ease, transform 0.25s ease;
+    }
+    body.sidebar-collapsed #sidebar {
+      width: 72px;
+    }
+    body.sidebar-collapsed .sidebar-label,
+    body.sidebar-collapsed .sidebar-brand-text,
+    body.sidebar-collapsed .sidebar-footer-note {
+      display: none;
+    }
+    body.sidebar-collapsed .sidebar-nav-item {
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+      gap: 0;
+    }
+    body.sidebar-collapsed #sidebar .h-16 {
+      justify-content: center;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    body.sidebar-collapsed #sidebar .h-16 > a {
+      gap: 0;
+    }
+
+    /* Navigation Item Active Indicator */
+    .sidebar-nav-item {
+      border-left: 3px solid transparent;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .sidebar-nav-item:hover {
+      background-color: #293548;
+      color: #FFFFFF;
+    }
+    .sidebar-nav-item.active {
+      background-color: rgba(20, 184, 166, 0.14);
+      border-left-color: #14B8A6;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .sidebar-nav-item.active .nav-icon {
+      color: #14B8A6;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+
+    /* Modal Backdrop */
+    .sf-modal-backdrop {
+      background-color: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(2px);
+    }
+
+    /* Chart Container Alignment & Sizing */
+    .sf-chart-box {
+      position: relative;
+      height: 256px;
+      width: 100%;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    /* Consistent Form Label & Field Spacing */
+    .sf-field-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1E293B;
+      margin-bottom: 0.375rem;
+      line-height: 1.25;
+    }
